@@ -1,5 +1,5 @@
 # Old School Grid
-Trustworthy **postcss grid system** we use to love with wrapping columns and padding gutters.</div>
+Trustworthy **postcss grid system** we learnt to love, with wrapping columns and padding gutters.
 
 *   [Intro](#intro)
 *   [Install](#install)
