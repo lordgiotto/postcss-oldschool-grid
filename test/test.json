@@ -1,0 +1,219 @@
+{
+	"tests":
+		[
+			{
+				"name": "Wrapper",
+				"description": "wrapperWidth 200px",
+				"method": "config",
+				"input": ".wrapper{@wrapper;}",
+				"config": {"wrapperWidth":"200px"},
+				"expected": {
+					".wrapper": {
+						"width": "100%",
+						"margin-left": "auto",
+						"margin-right": "auto",
+						"max-width": "200px",
+						"padding-left": "30px",
+						"padding-right": "30px",
+						"box-sizing": "border-box"
+					},
+					".wrapper *, .wrapper *:after, .wrapper *:before": {
+						"box-sizing": "border-box"
+					}
+				}
+			},
+			{
+				"name": "Row",
+				"description": "gutterWidth 110px; wrapperWidth must inherit.",
+				"method": "@grid",
+				"input": ".row{@row;}",
+				"prepend": "@grid{gutter-width: 110px;}",
+				"expected": {
+					".row": {
+						"padding-left": "55px",
+						"padding-right": "55px",
+						"margin-left": "-110px",
+						"margin-right": "-110px",
+						"zoom": "1"
+					},
+					".row:before": {
+						"content": "\"\"",
+						"display": "table"
+					},
+					".row:after": {
+						"content": "\"\"",
+						"display": "table",
+						"clear": "both"
+					}
+				}
+			},
+			{
+				"name": "Column",
+				"description": "6 cols with 12 totalColumns",
+				"method": "default",
+				"input": ".col{@col 6;}",
+				"expected": {
+					".col": {
+						"position": "relative",
+						"float": "left",
+						"width": "50%",
+						"padding-left": "15px",
+						"padding-right": "15px"
+					}
+				}
+			},
+			{
+				"name": "Column2",
+				"description": "6 cols with 16 totalColumns and 2em gutterWidth",
+				"method": "config",
+				"input": ".col{@col 6;}",
+				"config": {"totalColumns": 16, "gutterWidth": "2em"},
+				"expected": {
+					".col": {
+						"position": "relative",
+						"float": "left",
+						"width": "37.5%",
+						"padding-left": "1em",
+						"padding-right": "1em"
+					}
+				}
+			},
+			{
+				"name": "No Gutter",
+				"description": "gutterWidth:false; Wrapper with no padding, row with no gutter",
+				"method": "@grid",
+				"input": ".wrapper{@wrapper;}\n.row{@row;}",
+				"config": {"gutterWidth": 0 },
+				"expected": {
+					".wrapper": {
+						"width": "100%",
+						"margin-left": "auto",
+						"margin-right": "auto",
+						"max-width": "1024px",
+						"box-sizing": "border-box"
+					},
+					".wrapper *, .wrapper *:after, .wrapper *:before": {
+						"box-sizing": "border-box"
+					},
+					".row": {
+						"zoom": "1"
+					},
+					".row:before": {
+						"content": "\"\"",
+						"display": "table"
+					},
+					".row:after": {
+						"content": "\"\"",
+						"display": "table",
+						"clear": "both"
+					}
+				}
+			},
+			{
+				"name": "verticalSpace Auto",
+				"description": "verticalSpace must inherits gutterWith:8px;",
+				"method": "@grid",
+				"input": ".row{@row;}",
+				"prepend": "@grid{gutter-width: 8px; vertical-space:true;}",
+				"expected": {
+					".row": {
+						"padding-left": "4px",
+						"padding-right": "4px",
+						"padding-top": "4px",
+						"padding-bottom": "4px",
+						"margin-left": "-8px",
+						"margin-right": "-8px",
+						"zoom": "1"
+					},
+					".row:before": {
+						"content": "\"\"",
+						"display": "table"
+					},
+					".row:after": {
+						"content": "\"\"",
+						"display": "table",
+						"clear": "both"
+					}
+				}
+			},
+			{
+				"name": "verticalSpace Manual",
+				"description": "verticalSpace setted to 1em",
+				"method": "config",
+				"input": ".col{@col;}",
+				"config": {"verticalSpace":"1em"},
+				"expected": {
+					".col": {
+						"position": "relative",
+						"float": "left",
+						"width": "100%",
+						"padding-left": "15px",
+						"padding-right": "15px",
+						"padding-top": "0.5em",
+						"padding-bottom": "0.5em"
+					}
+				}
+			},
+			{
+				"name": "Push and pull",
+				"description": "push 6 columns and pull 3 with 10 total",
+				"method": "@grid",
+				"input": ".col{@col;@push 6;@pull 3;}",
+				"prepend": "@grid{total-columns: 10px;}",
+				"expected": {
+					".col": {
+						"position": "relative",
+						"float": "left",
+						"width": "100%",
+						"padding-left": "15px",
+						"padding-right": "15px",
+						"left": "60%",
+						"right": "30%"
+					}
+				}
+			},
+			{
+				"name": "Clearfix",
+				"description": "clearfix",
+				"method": "default",
+				"input": ".clear{@clearfix;}",
+				"expected": {
+					".clear": {
+						"zoom": "1"
+					},
+					".clear:before": {
+						"content": "\"\"",
+						"display": "table"
+					},
+					".clear:after": {
+						"content": "\"\"",
+						"display": "table",
+						"clear": "both"
+					}
+				}
+			},
+			{
+				"name": "Borderbox",
+				"description": "borderbox in both root and selector, both @borderbox and @border-box",
+				"method": "default",
+				"input": "@border-box;\n.classOne{@border-box;}\n.classTwo{@borderbox;}",
+				"expected": {
+					"*, *:after, *:before": {
+						"box-sizing": "border-box"
+					},
+					".classOne" :{
+						"box-sizing": "border-box"
+					},
+					".classTwo" :{
+						"box-sizing": "border-box"
+					},
+					".classOne *, .classOne *:after, .classOne *:before": {
+						"box-sizing": "border-box"
+					},
+					".classTwo *, .classTwo *:after, .classTwo *:before": {
+						"box-sizing": "border-box"
+					}
+				}
+			}
+		]
+}
