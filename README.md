@@ -1,6 +1,5 @@
 # Old School Grid
-Trustworthy **grid system** we used to love  
-with wrapping columns and padding gutters.</div>
+Trustworthy **grid system** we used to love with wrapping columns and padding gutters.</div>
 
 *   [Intro](#intro)
 *   [Install](#install)
@@ -19,6 +18,7 @@ Under the hood it behave like Bootstrap grid system, so all you have to do is to
 
 # Example
 
+![postcss-oldschool-grid](https://raw.githubusercontent.com/lordgiotto/postcss-oldschool-grid/master/example.png)
 
 <div id="install"></div>
 
