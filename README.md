@@ -8,9 +8,14 @@ Trustworthy **grid system** we used to love with wrapping columns and padding gu
 *   [Functions](#functions)
 
 <div id="intro"></div>
+
 # What's that?
 
 **postcss-oldschool-grid** is a <a href="">postcss</a> plugin that provide an easy to use and intuitive grid system based on padding gutters and wrapping columns.
+
+
+_No calc()_, _no right margins with :last-child and :nth-child()_, **simply nested containers with padding gutters**.
+
 
 Under the hood it behave like Bootstrap grid system, so all you have to do is to put content inside a column, put the column inside a row and eventually put the row inside a wrapper. Easy! :)
 
@@ -31,7 +36,7 @@ Next step is to use npm to instll **postcss-oldschool-grid**:
 $ npm install postcss-oldschool-grid`
 ```
 And add it to your postcss processors:
-```javascript
+```js
 var osg = require('postcss-oldschool-grid');
 ...
 postcss([ osg({config}) ])
@@ -109,13 +114,13 @@ Activate debug mode for all rows: a background rappresenting the grid will be ap
 
 Create a wrapper, fluid and centered in the page.  
 It also add border-box property to the element and all the children.
-```
+```css
 .wrapper {     
     @wrapper 960px;
 }
 ```
 compiles:
-```
+```css
 .wrapper{     
     width: 100%;     
     margin-left: auto;     
@@ -134,13 +139,13 @@ compiles:
 
 Create a row: better to use inside the wrapper, because it applies a negative margin to compensate wrapper and columns padding.  
 It also adds a clearfix.
-```
+```css
 .row {     
 @row;
 }
 ```
 compiles:
-```
+```css
 .row{     
     width: 100%;     
     padding-left: 15px;     
@@ -165,13 +170,13 @@ compiles:
 <small>[number]: _The number of cols to span this element._</small>
 
 Span the element for [number] cols.
-```
+```css
 .col {     
     @col 960px;
 }
 ```
 compiles
-```
+```css
 .col{     
     position: relative;     
     float: left;     
@@ -186,13 +191,13 @@ compiles
 <small>[number]: _The number of cols to pull or push this element_</small>
 
 Pull or push the element for [number] cols. Uses relative position and right or left properties.
-```
+```css
 .push {     
     @push 2;
 }
 ```
 compiles:
-```
+```css
 .push {     
     left: 16.666666666666664%;
 }
@@ -206,11 +211,11 @@ Utility to add a clearfix to an element.
 
 Utility to set an element and his children in _box-sizing: border-box;_.  
 **If used outside any selector, il will apply border-box globally.**
-```
+```css
 @borderbox;
 ```
 compiles:
-```
+```css
 *, *:after, *:before {     
     box-sizing: border-box;
 }
