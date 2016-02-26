@@ -1,0 +1,172 @@
+
+@import '../../node_modules/reset.css/reset.css';
+@import '../../node_modules/font-awesome/css/font-awesome.min.css';
+@import '_config.css';
+@import "_fonts.css";
+@import '_sample-grid.css';
+@import '_code.css';
+
+/*GENERAL*/
+
+body {
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+a {
+	color: var(--color-one);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+	margin: 15px 0;
+}
+
+small {
+	font-size: .9em;
+}
+
+/*LAYOUT*/
+
+.wrapper {
+	@wrapper;
+}
+
+/*HEADER*/
+
+.page-header {
+	/*background-image: url(../img/bg.jpg);*/
+	background-image: svg("src/svg/pattern.svg", "[fill]: #462055;");
+	background-size: 250px;
+	background-color: #361B41;
+	padding: 150px 0;
+	color: white;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 0 150px black inset;
+	& a {
+		color: var(--color-light);
+	}
+}
+
+.page-title {
+	font-size: var(--text-huge);
+	line-height: 1.2em;
+	@media (--small) {
+		font-size: var(--text-big);
+	}
+}
+
+.page-subtitle {
+	font-size: 16px;
+	line-height: 1.2em;
+}
+
+.menu {
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	color: var(--color-light);
+	& li {
+		display: inline-block;
+		width: 80px;
+		margin: 0 .3em;
+		font-weight: 600;
+		font-size: 14px;
+		transition: font-size .2s;
+		&:hover {
+			font-size: 16px;
+		}
+	}
+	@media (--small) {
+		display: none;
+	}
+}
+
+.sharebox {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	text-align: right;
+	& .fa {
+		font-weight: 100;
+		font-size: 26px;
+		margin-top: 4px;
+		margin-left: 3px;
+	}
+}
+
+/*SECTIONS*/
+
+section {
+	margin: vr(2)em 0;
+	& li {
+		list-style: disc;;
+		list-style-position: inside;
+		padding-left: 30px;
+	}
+}
+
+.subsection {
+	& small {
+		display: block;
+	}
+}
+
+code {
+	display: block;
+	margin: 20px 0;
+	padding: 10px 15px;
+	white-space: pre-line;
+	background: color(var(--color-light) lightness(85%));
+}
+
+.title {
+	font-size: var(--text-big);
+}
+
+.title-small {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+/*FOOTER*/
+
+.toTop {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 10px 20px;
+	background-color: var(--color-one);
+	color: var(--color-light);
+	transition: transform .5s;
+	transform: translateX(120%);
+	&.visible {
+		transform: translateX(0)
+	}
+}
+
+.page-footer {
+	padding: 20px 0;
+	margin: 10px 0;
+	border-top: 1px solid #ddd;
+	font-size: 12px;
+	color: #555;
+	text-align: center;
+	& li {
+		display: inline-block;
+		margin: 0 5px;
+	}
+}

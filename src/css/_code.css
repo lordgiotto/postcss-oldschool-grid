@@ -1,0 +1,28 @@
+[class^=code] {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 5px 10px;
+		background: #999999;
+		color: black;
+		font-size: 12px;
+	}
+}
+
+.code-js:before {
+	content: 'JS';
+}
+
+.code-css:before {
+	content: 'CSS';
+}
+
+.code-postcss:before {
+	content: 'PostCSS';
+}
+
+.code-cli:before {
+	content: 'shell';
+}

@@ -1,0 +1,32 @@
+.wf-inactive, .wf-loading {
+	opacity: 0;
+}
+
+.wf-active {
+	opacity: 1;
+	transition: opacity .5s;
+}
+
+body {
+	font-family: 'Raleway';
+	opacity: 1;
+	transition: opacity .3s;
+}
+
+.page-title, .title {
+	font-family: 'Lobster';
+	opacity: 1;
+	transition: opacity .3s;
+}
+
+code {
+	font-family: monospace;
+}
+
+/*.wf-inactive, .wf-inactive {
+	display: none;
+}
+
+.wf-raleway-active {
+	display: block;
+}*/

@@ -1,0 +1,83 @@
+@grid {
+	vertical-space: true;
+	total-columns: 12;
+}
+
+.sample-row {
+	@row;
+	@debug-grid;
+	border-top: 3px solid color(var(--color-one) lightness(70%));
+	&:last-child {
+		border-bottom: 3px solid color(var(--color-one) lightness(70%));
+	}
+	&:before {
+		content: "@row";
+		display: block;
+		font-family: monospace;
+		font-weight: bold;
+		font-size: 18px;
+		text-align: center;
+	}
+}
+
+.sample-col-4 {
+	@col 4;
+	& .inside:before {
+		content: "@col 4";
+	}
+}
+
+.sample-col-7 {
+	@col 7;
+	& .inside:before {
+		content: "@col 7";
+	}
+}
+
+
+.sample-col-8 {
+	@col 8;
+	& .inside:before {
+		content: "@col 8";
+	}
+}
+
+.sample-col-12 {
+	@col 12;
+	& .inside:before {
+		content: "@col 12";
+	}
+}
+
+.push-2 {
+	@push 2;
+	& .inside:after {
+		content: "@push 2";
+	}
+}
+
+.sample-col-4, .sample-col-8 {
+	@media (--small) {
+		@col 12;
+		& .inside:before {
+			content: "@col 12";
+		}
+	}
+}
+
+.inside {
+	height: 100px;
+	width: 100%;
+	padding: 5px 10px;
+	color: white;
+	background-color: var(--color-one);
+	border: 1px solid color(var(--color-light) lightness(80%));
+	border-radius: 2px;
+	&:before, &:after {
+		display: block;
+		font-family: monospace;
+		font-weight: bold;
+		font-size: 14px;
+		text-align: left;
+	}
+}

@@ -1,0 +1,8 @@
+@custom-media --small (max-width: 800px);
+:root {
+	--text-huge: 62px;
+	--text-big: 42px;
+	--color-one: #8e44ad;
+	--color-light: #ecf0f1;
+	--color-dark: #2c3e50;
+}

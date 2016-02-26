@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Old School Grid - PostCSS Plugin</title>
+		<meta name="description" content="Trustworthy postcss grid system we use to love, with wrapping columns and padding gutters.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="57x57" href="dist/icons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="dist/icons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="dist/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="dist/icons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="dist/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="dist/icons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="dist/icons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="dist/icons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="dist/icons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="dist/icons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="dist/icons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="dist/icons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="dist/icons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="dist/icons/manifest.json">
+		<link rel="mask-icon" href="dist/icons/safari-pinned-tab.svg">
+		<link rel="shortcut icon" href="dist/icons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#361b41">
+		<meta name="msapplication-TileImage" content="dist/icons/mstile-144x144.png">
+		<meta name="msapplication-config" content="dist/icons/browserconfig.xml">
+		<meta name="theme-color" content="#361b41">
+	</head>
+	<link rel="stylesheet" href="dist/css/main.min.css">
+	<body>
+		<header class="page-header" id="top">
+			<div class="wrapper">
+				<h1 class="page-title">Old School Grid</h1>
+				<div class="page-subtitle">Trustworthy <strong>grid system</strong> we learnt to love <br>with wrapping columns and padding gutters.</div>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="#intro">Intro</a></li>
+					<li><a href="#install">Install</a></li>
+					<li><a href="#example">Example</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#functions">Functions</a></li>
+					<li><a href="https://github.com/lordgiotto/postcss-oldschool-grid" target="_blank">Github</a></li>
+				</ul>
+			</nav>
+			<div class="sharebox">
+				<div>Share on</div>
+				<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//lordgiotto.github.io/postcss-oldschool-grid/"><i class="fa fa-twitter-square"></i></a>
+				<a target="_blank" href="https://twitter.com/home?status=%40postcss%20Old%20School%20Grid%3A%20%40css%20grid%20system%20with%20wrapping%20columns%20and%20padding%20gutters%20http%3A//lordgiotto.github.io/postcss-oldschool-grid/"><i class="fa fa-facebook-square"></i></a>
+				<a target="_blank" href="https://plus.google.com/share?url=http%3A//lordgiotto.github.io/postcss-oldschool-grid/"><i class="fa fa-google-plus-square"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//lordgiotto.github.io/postcss-oldschool-grid/&title=postcss-oldschool-grid&summary=CSS%20grid%20system%20with%20wrapping%20columns%20and%20padding%20gutters%20with%20PostCSS&source="><i class="fa fa-linkedin-square"></i></a>
+			</div>
+		</header>
+		<div class="wrapper">
+			<section id="intro">
+				<h1 class="title">What's that?</h1>
+				<p>
+					<strong>postcss-oldschool-grid</strong> is a <a target="_blank" href="https://github.com/postcss/postcss">postcss</a> plugin that provide an easy to use and intuitive grid system based on padding gutters and wrapping columns.
+				</p>
+				<p>
+					<em>No calc()</em>, <em>no right margins with :last-child and :nth-child()</em>, <strong>simply nested containers with padding gutters</strong>. <br>
+					Under the hood it behave like Bootstrap grid system, so all you have to do is to put content inside a column, put the column inside a row and eventually put the row inside a wrapper. Easy! :)
+				</p>
+			</section>
+			<section id="example">
+				<h1 class="title">Example</h1>
+				<div class="wrapper">
+					<div class="sample-row">
+						<div class="sample-col-4"><div class="inside"></div></div>
+						<div class="sample-col-4"><div class="inside"></div></div>
+						<div class="sample-col-4"><div class="inside"></div></div>
+					</div>
+					<div class="sample-row">
+						<div class="sample-col-8"><div class="inside"></div></div>
+						<div class="sample-col-4"><div class="inside"></div></div>
+					</div>
+					<div class="sample-row">
+						<div class="sample-col-12"><div class="inside"></div></div>
+						<div class="sample-col-7 push-2"><div class="inside"></div></div>
+					</div>
+				</div>
+			</section>
+			<section id="install">
+				<h1 class="title">Install</h1>
+				<p>
+					First of all you have to install and configure <strong>postcss</strong> in order to use this plugin:
+					if you don't know what f***ing I'm talking about, take a look to the <a target="_blank" href="https://github.com/postcss/postcss#usage">guide on the postcss github page</a>.
+				</p>
+				<p>
+					Next step is to use npm to instll <strong>postcss-oldschool-grid</strong>:
+					<code class="code-cli">$ npm install postcss-oldschool-grid</code>
+					And add it to your postcss processors:
+					<code class="code-js">var osg = require('postcss-oldschool-grid');
+						...
+						postcss([ osg({config}) ])
+						...
+					</code>
+				</p>
+			</section>
+			<section id="options">
+				<h1 class="title">Options</h1>
+				<p>
+					There are two ways to configure postcss-oldschool-grid:
+					<ul>
+						<li>
+							Pass an object as parameter when you call the processor
+							<code class="code-js">var config = {
+								&nbsp;&nbsp;&nbsp;&nbsp;wrapperWidth: '40px';
+								&nbsp;&nbsp;&nbsp;&nbsp;gutterWidth: '20px',
+								&nbsp;&nbsp;&nbsp;&nbsp;totalColumns: 16
+							}
+							...
+							postcss([ osg(config) ]);
+							</code>
+						</li>
+						<li>
+							Set options in the CSS, inside the special at-rule <strong>@grid</strong> (you can use either camelCase or param-case)
+							<code class="code-postcss">@grid {
+								&nbsp;&nbsp;&nbsp;&nbsp;wrapper-width: 40px;
+								&nbsp;&nbsp;&nbsp;&nbsp;gutter-width: 20px;
+								&nbsp;&nbsp;&nbsp;&nbsp;total-columns: 16
+							}</code>
+						</li>
+					</ul>
+				</p>
+				<div class="subsection">
+					<h2 class="title-small">totalColumns</h2>
+					<small>Accepted Values: <em>string</em>, <em>number</em></small>
+					<small>Default Value: <em>12</em></small>
+					<p>Set the total number of columns used to calculate the grid.</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">wrapperWidth</h2>
+					<small>Accepted Values: <em>string</em>, <em>number</em></small>
+					<small>Default Value: <em>"1024px"</em></small>
+					<p>Set the width of @wrapper element</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">wrapperPadding</h2>
+					<small>Accepted Values: <em>string</em>, <em>number</em>, <em>true|false</em></small>
+					<small>Default Value: <em>Inherit form GutterWidth</em></small>
+					<p>Set the padding of @wrapper element, so its external gutter. If setted to <em>true</em> it will inherit gutterWidth; if false it will be removed.</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">gutterWidth</h2>
+					<small>Accepted Values: <em>string</em>, <em>number</em></small>
+					<small>Default Value: <em>"30px"</em></small>
+					<p>The gutter width used in the grid.</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">verticalSpace</h2>
+					<small>Accepted Values: <em>string</em>, <em>number</em>, <em>true|false</em></small>
+					<small>Default Value: <em>Not set</em></small>
+					<p>Set the vertical space between columns and rows.</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">debugMode</h2>
+					<small>Accepted Values: <em>true|false</em></small>
+					<small>Default Value: <em>false</em></small>
+					<p>Activate debug mode for all rows: a background rappresenting the grid will be applied (like the exemple in this page).</p>
+				</div>
+			</section>
+			<section id="functions">
+				<h1 class="title">Functions</h1>
+				<div class="subsection">
+					<h2 class="title-small">@wrapper [width]</h2>
+					<small>[width]: <em>Width of the wrapper</em></small>
+					<p>
+						Create a wrapper, fluid and centered in the page. <br>
+						It also add border-box property to the element and all the children.
+						<code class="code-postcss">.wrapper {
+							&nbsp;&nbsp;&nbsp;&nbsp;@wrapper 960px;
+						}
+						</code>
+						<code class="code-css">.wrapper{
+							&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+							&nbsp;&nbsp;&nbsp;&nbsp;margin-left: auto;
+							&nbsp;&nbsp;&nbsp;&nbsp;margin-right: auto;
+							&nbsp;&nbsp;&nbsp;&nbsp;max-width: 960px;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-left: 30px;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-right: 30px;
+							&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;
+						}
+						.wrapper *, .wrapper *:after, .wrapper *:before {
+							&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;
+						}
+						</code>
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@row</h2>
+					<p>
+						Create a row: better to use inside the wrapper, because it applies a negative margin to compensate wrapper and columns padding. <br> It also adds a clearfix.
+						<code class="code-postcss">.row {
+							&nbsp;&nbsp;&nbsp;&nbsp;@row;
+						}
+						</code>
+						<code class="code-css">.row{
+							&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-left: 15px;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-right: 15px;
+							&nbsp;&nbsp;&nbsp;&nbsp;margin-left: -30px;
+							&nbsp;&nbsp;&nbsp;&nbsp;margin-right: -30px;
+							&nbsp;&nbsp;&nbsp;&nbsp;zoom: 1;
+						}
+						.row:after {
+							&nbsp;&nbsp;&nbsp;&nbspcontent: "";
+							&nbsp;&nbsp;&nbsp;&nbspdisplay: table;
+							&nbsp;&nbsp;&nbsp;&nbspclear: both;
+						}
+
+						.row:before {
+							&nbsp;&nbsp;&nbsp;&nbspcontent: "";
+							&nbsp;&nbsp;&nbsp;&nbspdisplay: table;
+						}
+						</code>
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@col [number]</h2>
+					<small>[number]: <em>The number of cols to span this element.</em></small>
+					<p>
+						Span the element for [number] cols.
+						<code class="code-postcss">.col {
+							&nbsp;&nbsp;&nbsp;&nbsp;@col 960px;
+						}
+						</code>
+						<code class="code-css">.col{
+							&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
+							&nbsp;&nbsp;&nbsp;&nbsp;float: left;
+							&nbsp;&nbsp;&nbsp;&nbsp;width: 33.33333333333333%;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-left: 15px;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding-right: 15px;
+						}
+						</code>
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@pull [number] or @push [number]</h2>
+					<small>[number]: <em>The number of cols to pull or push this element</em></small>
+					<p>
+						Pull or push the element for [number] cols. Uses relative position and right or left properties.
+						<code class="code-postcss">.push {
+							&nbsp;&nbsp;&nbsp;&nbsp;@push 2;
+						}
+						</code>
+						<code class="code-css">.push {
+							&nbsp;&nbsp;&nbsp;&nbsp;left: 16.666666666666664%
+						}
+						</code>
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@clearfix</h2>
+					<p>
+						Utility to add a clearfix to an element.
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@borderbox or @border-box</h2>
+					<p>
+						Utility to set an element and his children in <em>box-sizing: border-box;</em>. <br>
+						<strong>If used outside any selector, il will apply border-box globally.</strong>
+						<code class="code-postcss">@borderbox;
+						</code>
+						<code class="code-css">*, *:after, *:before {
+							&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;
+						}
+						</code>
+					</p>
+				</div>
+				<div class="subsection">
+					<h2 class="title-small">@debug-grid</h2>
+					<p>
+						Utility to debug the grid with background guides. <br>
+						<strong>Apply it only to a row element to prevent unexpected behaviours.</strong>
+					</p>
+				</div>
+			</section>
+		</div>
+		<div class="wrapper">
+			<footer class="page-footer">
+				Created by <strong>Lorenzo Zottar</strong>
+				<ul>
+					<li><a href="https://twitter.com/LordGiotto" target="_blank">twitter</a></li>
+					<li><a href="https://github.com/lordgiotto/" target="_blank">github</a></li>
+					<li><a href="https://it.linkedin.com/in/lorenzozottar" target="_blank">linkedin</a></li>
+					<li><a href="https://www.behance.net/lordgiotto" target="_blank">behance</a></li>
+				</ul>
+			</footer>
+		</div>
+		<a class="toTop" href="#top"><i class="fa fa-chevron-up"></i></a>
+		<script src="dist/js/main.min.js" charset="utf-8"></script>
+	</body>
+</html>
