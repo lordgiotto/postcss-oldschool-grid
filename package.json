@@ -1,6 +1,6 @@
 {
   "name": "postcss-oldschool-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "post-css grid system with wrapping columns and padding as gutters",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "camel-case": "^1.2.2",
-	"string-template": "^1.0.0",
+    "string-template": "^1.0.0",
     "postcss": "^5.0.16"
   }
 }
