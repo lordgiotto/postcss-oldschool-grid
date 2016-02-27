@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://lordgiotto.github.io/postcss-oldschool-grid/sitemap.xml
