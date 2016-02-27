@@ -1,9 +1,11 @@
 # Old School Grid
 
-#### Visit [official website](https://lordgiotto.github.io/postcss-oldschool-grid/) for live demo and documentation
-
 Trustworthy **postcss grid system** we learnt to love, with wrapping columns and padding gutters.
 
+
+[Visit official website for live demo and documentation](https://lordgiotto.github.io/postcss-oldschool-grid/)
+
+---
 
 *   [Intro](#intro)
 *   [Install](#install)
