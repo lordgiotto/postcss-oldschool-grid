@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lordgiotto/postcss-old-fasioned-grid.git"
+    "url": "git+https://github.com/lordgiotto/postcss-oldschool-grid.git"
   },
   "keywords": [
     "postcss",
@@ -20,9 +20,9 @@
   "author": "Lorenzo Zottar <lordgiotto@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lordgiotto/postcss-old-fasioned-grid/issues"
+    "url": "https://github.com/lordgiotto/postcss-oldschool-grid/issues"
   },
-  "homepage": "https://github.com/lordgiotto/postcss-old-fasioned-grid#readme",
+  "homepage": "https://github.com/lordgiotto/postcss-oldschool-grid#readme",
   "devDependencies": {
     "mocha": "^2.4.5"
   },
