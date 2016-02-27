@@ -49,19 +49,19 @@
 	}
 }
 
+.sample-col-4, .sample-col-8 {
+	@media (--small) {
+		@col 6;
+		& .inside:before {
+			content: "@col 6";
+		}
+	}
+}
+
 .push-2 {
 	@push 2;
 	& .inside:after {
 		content: "@push 2";
-	}
-}
-
-.sample-col-4, .sample-col-8 {
-	@media (--small) {
-		@col 12;
-		& .inside:before {
-			content: "@col 12";
-		}
 	}
 }
 
