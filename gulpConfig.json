@@ -1,0 +1,21 @@
+{
+	"filePaths": {
+		"src": {
+			"base":   "src/",
+			"css":    "src/css/",
+			"jsMain":     "src/js/main.js",
+			"img":    "src/rawimg/",
+			"svg":    "src/svg/"
+		},
+		"dest": {
+			"base":     "dist/",
+			"css":      "dist/css/",
+			"js":       "dist/js/",
+			"imported": "dist/imported",
+			"img":      "dist/img/"
+		}
+	},
+	"autoprefixConfig" : {
+		"browsers": ["> 1%", "last 2 versions", "ie > 7"]
+	}
+}
