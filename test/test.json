@@ -34,7 +34,8 @@
 						"padding-right": "55px",
 						"margin-left": "-110px",
 						"margin-right": "-110px",
-						"zoom": "1"
+						"zoom": "1",
+						"width": "100%"
 					},
 					".row:before": {
 						"content": "\"\"",
@@ -96,7 +97,8 @@
 						"box-sizing": "border-box"
 					},
 					".row": {
-						"zoom": "1"
+						"zoom": "1",
+						"width": "100%"
 					},
 					".row:before": {
 						"content": "\"\"",
@@ -123,7 +125,8 @@
 						"padding-bottom": "4px",
 						"margin-left": "-8px",
 						"margin-right": "-8px",
-						"zoom": "1"
+						"zoom": "1",
+						"width": "100%"
 					},
 					".row:before": {
 						"content": "\"\"",
@@ -169,6 +172,24 @@
 						"padding-right": "15px",
 						"left": "60%",
 						"right": "30%"
+					}
+				}
+			},
+			{
+				"name": "Push and pull zero",
+				"description": "push 6 columns and pull 3 with 10 total",
+				"method": "@grid",
+				"input": ".col{@col;@push 0;@pull 0;}",
+				"prepend": "@grid{total-columns: 10px;}",
+				"expected": {
+					".col": {
+						"position": "relative",
+						"float": "left",
+						"width": "100%",
+						"padding-left": "15px",
+						"padding-right": "15px",
+						"left": "0%",
+						"right": "0%"
 					}
 				}
 			},
