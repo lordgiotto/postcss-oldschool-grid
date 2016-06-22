@@ -34,8 +34,7 @@
 						"padding-right": "55px",
 						"margin-left": "-110px",
 						"margin-right": "-110px",
-						"zoom": "1",
-						"width": "100%"
+						"zoom": "1"
 					},
 					".row:before": {
 						"content": "\"\"",
@@ -97,8 +96,7 @@
 						"box-sizing": "border-box"
 					},
 					".row": {
-						"zoom": "1",
-						"width": "100%"
+						"zoom": "1"
 					},
 					".row:before": {
 						"content": "\"\"",
@@ -125,8 +123,7 @@
 						"padding-bottom": "4px",
 						"margin-left": "-8px",
 						"margin-right": "-8px",
-						"zoom": "1",
-						"width": "100%"
+						"zoom": "1"
 					},
 					".row:before": {
 						"content": "\"\"",
